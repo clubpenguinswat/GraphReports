@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAT GraphReports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <label>Size display range</label>
+    From
+    <input type="number" id="setting_sizeRangeMax" value="50" oninput="sizeMax = Number(this.value); updateAllCharts();"></input>
+    to
+    <input type="number" id="setting_sizeRangeMin" value="0" oninput="sizeMin = Number(this.value); updateAllCharts();"></input>
+
+    <h1>Weekly</h1>
+
+    <h2>Event Sizes</h2>
+    <label>Comma-separated event names:</label>
+    <input id="chart1names" oninput="updateChart1(this.value, _('chart1sizes').value)"></input>
+    <br>
+    <br>
+    <label>Comma-separated event sizes:</label>
+    <input id="chart1sizes" oninput="updateChart1(_('chart1names').value, this.value)"></input>
+    <br>
+    <div id="chart1"></div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="./main.js"></script>
+
+  </body>
+
+</html>
